@@ -62,7 +62,7 @@ To install and run the application locally, follow these steps:
 
 1. **Sign In/Sign Out**: Access the application’s full functionality by signing in with Firebase Authentication.
 2. **Add Articles**: Authenticated users can add new articles by clicking "New Article" in the sidebar.
-3. **Switch Tabs**: Explore different news categories by switching between General News, Basketball News, and NFL Football.
+3. **Explore**: Explore different news categories like General News, Basketball News, and NFL Football.
 
 ## Website
 https://masonlui.com
