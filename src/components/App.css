@@ -1,6 +1,5 @@
 /* App.css */
 
-/* General App Styling */
 .App {
   text-align: center;
   font-family: Arial, sans-serif;
@@ -9,7 +8,6 @@
   min-height: 100vh;
 }
 
-/* Header Styling */
 header {
   display: flex;
   align-items: center;
@@ -19,65 +17,18 @@ header {
   color: white;
 }
 
-/* Logo Styling */
 .logo {
-  width: 200px; /* Adjust as needed */
-  height: auto; /* Maintain aspect ratio */
+  width: 150px;
+  height: auto;
   max-height: 100px;
   margin-right: 20px;
 }
 
-/* Title Styling */
 header h1 {
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0;
 }
 
-/* Common Button Styling */
-.styled-button {
-  display: inline-block;
-  padding: 10px 20px;
-  font-size: 1rem;
-  color: white;
-  background-color: #400080;
-  border: none;
-  border-radius: 5px;
-  text-align: center;
-  transition: background-color 0.3s ease;
-  margin-bottom: 20px;
-  width: 100%; /* Full width in sidebar */
-}
-
-.styled-button:hover {
-  background-color: #7a00cc;
-  cursor: pointer;
-}
-
-/* Sidebar with articles */
-.sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  background-color: #ffffff;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Layout Styling */
-.content-layout {
-  display: grid;
-  grid-template-columns: 300px 1fr; /* Sidebar and main content */
-  gap: 20px;
-  padding: 20px;
-}
-
-/* Main Content Styling for News */
-.main-content {
-  background-color: #f5f6f7;
-}
-
-/* Header User Info */
 .user-info {
   display: flex;
   align-items: center;
@@ -85,16 +36,13 @@ header h1 {
   color: white;
 }
 
-/* Common Button Styling */
 .styled-button {
-  display: inline-block;
   padding: 10px 20px;
   font-size: 1rem;
   color: white;
   background-color: #400080;
   border: none;
   border-radius: 5px;
-  text-align: center;
   transition: background-color 0.3s ease;
 }
 
@@ -102,3 +50,108 @@ header h1 {
   background-color: #7a00cc;
   cursor: pointer;
 }
+
+.content-layout {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  min-height: calc(100vh - 130px); /* Fill height except for header */
+}
+
+.sidebar {
+  width: 300px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f5f6f7;
+}
+
+.main-content.full-width {
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.tabs button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #333;
+  border: 1px solid #400080;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.tabs .active-tab {
+  background-color: #400080;
+  color: white;
+}
+
+.news-articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 15px;
+}
+
+.news-card {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: left;
+}
+
+.news-image {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.news-content {
+  padding: 10px 0;
+}
+
+.news-title {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+.news-description {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.news-link {
+  color: #400080;
+  font-weight: bold;
+}
+
+/* Common Button Styling */
+.styled-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: white;
+  background-color: #400080; /* purple color */
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.styled-button:hover {
+  background-color: #7a00cc; /* lighter purple */
+}
+

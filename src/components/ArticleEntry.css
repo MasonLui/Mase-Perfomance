@@ -1,0 +1,62 @@
+/* Container Styling */
+.article-entry-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin: 20px auto; /* Center container */
+    max-width: 600px; /* Restrict maximum width */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9fb;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header Styling */
+  .article-entry-container h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 16px;
+    color: #4a148c;
+    text-align: center; /* Center the title text */
+  }
+  
+  /* Input and Textarea Styling */
+  .article-entry-container input,
+  .article-entry-container textarea {
+    width: 100%;
+    box-sizing: border-box; /* Ensures padding doesn’t expand element width */
+    padding: 12px;
+    margin-bottom: 16px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  .article-entry-container input[type="text"] {
+    height: 40px; /* Set height for title input */
+    margin-top: 10px; /* Separate from header */
+  }
+  
+  /* Textarea Styling */
+  .article-entry-container textarea {
+    min-height: 150px;
+  }
+  
+  /* Button Styling */
+  .article-entry-container button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #4a148c;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .article-entry-container button:hover {
+    background-color: #6a1b9a;
+  }
+  

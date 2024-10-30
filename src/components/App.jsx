@@ -7,7 +7,7 @@ import { SignIn, SignOut } from './Auth';
 import { useAuthentication } from '../services/authService';
 import { fetchArticles, createArticle } from '../services/articleService';
 import './App.css';
-import NewsSection from './NewsSection';
+import NewsSection from './NewsSection'; // Keep only the general news import
 
 export default function App() {
   const [articles, setArticles] = useState([]);
@@ -44,7 +44,6 @@ export default function App() {
         <div className="user-info">
           {user ? (
             <>
-              {/* Use displayName or name if available, otherwise fall back to email */}
               <span>Welcome, {user.displayName || user.name || user.email}</span>
               <button className="styled-button" onClick={SignOut}>
                 Sign Out
@@ -72,9 +71,9 @@ export default function App() {
           </aside>
         )}
 
-        {/* Main Content for Sports News */}
+        {/* Main Content with General News only */}
         <main className="main-content">
-          <NewsSection />
+          <NewsSection /> {/* Render only the General News section */}
         </main>
       </div>
     </div>

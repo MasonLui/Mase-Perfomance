@@ -1,45 +1,53 @@
-// src/NewsSection.jsx
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
 import './NewsSection.css';
 
 const NewsSection = () => {
   const [newsArticles, setNewsArticles] = useState([]);
-  const apiKey = '222ebee407ae416eb943a1bebf425c70';
+
+  const fetchNews = async () => {
+    try {
+      const response = await fetch('https://sportsdaily.p.rapidapi.com/api/sports/news/?page=1&page_size=5', {
+        method: 'GET',
+        headers: {
+          'x-rapidapi-key': '3ec9680ad5msh85578e0c2ca05f6p138feejsn0434d53b9fb3',
+          'x-rapidapi-host': 'sportsdaily.p.rapidapi.com',
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log('API Response:', data);
+      setNewsArticles(data.results || []); // Update to access data.results
+    } catch (error) {
+      console.error('Error fetching sports news:', error);
+    }
+  };
 
   useEffect(() => {
-    const fetchNews = async () => {
-      try {
-        const response = await axios.get(
-          `https://newsapi.org/v2/top-headlines?category=sports&apiKey=${apiKey}`
-        );
-        setNewsArticles(response.data.articles);
-      } catch (error) {
-        console.error('Error fetching sports news:', error);
-      }
-    };
     fetchNews();
   }, []);
 
   return (
     <div className="news-section">
-      {/* Title for Sports News */}
       <h2>Sports News</h2>
-
-      {/* News Articles */}
       <div className="news-articles">
-        {newsArticles.map((article, index) => (
-          <div key={index} className="news-card">
-            <img src={article.urlToImage} alt={article.title} className="news-image" />
-            <div className="news-content">
-              <h3 className="news-title">{article.title}</h3>
-              <p className="news-description">{article.description}</p>
-              <a href={article.url} target="_blank" rel="noopener noreferrer" className="news-link">
-                Read more
-              </a>
+        {newsArticles.length > 0 ? (
+          newsArticles.map((article, index) => (
+            <div key={index} className="news-card">
+              <img src={article.image_url} alt={article.title} className="news-image" />
+              <div className="news-content">
+                <h3 className="news-title">{article.title}</h3>
+                <p className="news-description">{article.content}</p>
+                {/* Removed the "Read more" link */}
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>Loading news...</p>
+        )}
       </div>
     </div>
   );
